@@ -1,0 +1,1826 @@
+
+
+<!DOCTYPE html><html lang="pt-BR"><script data-savepage-type="" type="text/plain" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script data-savepage-type="" type="text/plain" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script data-savepage-type="" type="text/plain" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head>
+<link rel="icon" data-savepage-href="https://browser-use-production-private.s3.us-east-2.amazonaws.com/favicon.ico" href=""><script bis_use="true" data-savepage-type="text/javascript" type="text/plain" charset="utf-8" data-bis-config="{&quot;blacklistIframeSrc&quot;:[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//www.google.com/recaptcha/enterprise/anchor&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;,&quot;//www.ukrnafta.com/data/map/&quot;,&quot;//maps.google.com/maps&quot;,&quot;//www.openstreetmap.org/export/embed.html&quot;,&quot;//www.google.com/maps/d/u/3/embed&quot;,&quot;//itm.ebaydesc.com/itmdesc&quot;,&quot;//books.google.com/books&quot;,&quot;//embed.podcasts.apple.com&quot;,&quot;//www.paypal.com/smartchat&quot;,&quot;//www.centurylink.com/assets/includes/common/sfChatiFrame.html&quot;,&quot;//macmillan-prod-gen.ada.support/embed&quot;,&quot;//macmillan-prod-gen.ada.support/chat&quot;,&quot;//ctl-consumer.my.site.com/&quot;],&quot;whitelistDomainsForPostBody&quot;:[&quot;youtube.com&quot;]}" data-dynamic-id="882a463a-9b6a-4a69-bd0b-f65078d81077" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎓 Ranking EdTechs — Tabela Interativa</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d2e;
+    --surface2: #252840;
+    --accent: #6c63ff;
+    --accent2: #00d4aa;
+    --text: #e2e8f0;
+    --text-muted: #8892a4;
+    --border: #2d3258;
+    --yc: #ff6b00;
+    --ph: #da552f;
+    --bl: #1da1f2;
+    --sh: #0b61c5;
+    --ih: #1dbf73;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  header { background: linear-gradient(135deg, #1a1d2e 0%, #252840 100%); padding: 32px 24px 24px; border-bottom: 1px solid var(--border); }
+  h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #6c63ff, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+  .subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+
+  .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .stat-pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 0.8rem; color: var(--text-muted); }
+  .stat-pill span { color: var(--accent2); font-weight: 700; }
+
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .search-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; color: var(--text); font-size: 0.9rem; width: 260px; outline: none; transition: border-color 0.2s; }
+  .search-box:focus { border-color: var(--accent); }
+  select.filter-select { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; color: var(--text); font-size: 0.85rem; outline: none; cursor: pointer; }
+  .reset-btn { background: transparent; border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; color: var(--text-muted); font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+  .reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .table-wrapper { overflow-x: auto; padding: 20px 24px 40px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 1100px; }
+  thead th { background: var(--surface); padding: 12px 10px; text-align: left; color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; z-index: 10; transition: color 0.2s; }
+  thead th:hover { color: var(--accent); }
+  thead th .sort-icon { display: inline-block; margin-left: 4px; opacity: 0.4; transition: opacity 0.2s; }
+  thead th.sort-asc .sort-icon, thead th.sort-desc .sort-icon { opacity: 1; color: var(--accent); }
+  thead th.sort-desc .sort-icon { transform: rotate(180deg); }
+
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:hover { background: var(--surface2); }
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+  tbody tr:nth-child(even):hover { background: var(--surface2); }
+  td { padding: 11px 10px; vertical-align: top; }
+
+  .rank-num { font-weight: 800; color: var(--accent2); font-size: 1rem; text-align: center; width: 40px; }
+  .top1 .rank-num { color: #ffd700; }
+  .top2 .rank-num { color: #c0c0c0; }
+  .top3 .rank-num { color: #cd7f32; }
+
+  .company-name { font-weight: 700; color: var(--text); font-size: 0.9rem; }
+  .company-url { display: block; font-size: 0.72rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; }
+  .company-url:hover { color: var(--accent); }
+  .company-desc { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; max-width: 200px; line-height: 1.4; }
+
+  .source-badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; }
+  .src-YCombinator { background: rgba(255,107,0,0.15); color: var(--yc); border: 1px solid rgba(255,107,0,0.3); }
+  .src-ProductHunt { background: rgba(218,85,47,0.15); color: var(--ph); border: 1px solid rgba(218,85,47,0.3); }
+  .src-BetaList { background: rgba(29,161,242,0.15); color: var(--bl); border: 1px solid rgba(29,161,242,0.3); }
+  .src-SaaSHub { background: rgba(11,97,197,0.15); color: var(--sh); border: 1px solid rgba(11,97,197,0.3); }
+  .src-IndieHackers { background: rgba(29,191,115,0.15); color: var(--ih); border: 1px solid rgba(29,191,115,0.3); }
+
+  .year-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; font-size: 0.78rem; font-weight: 600; color: var(--accent2); display: inline-block; }
+
+  .method-tag { display: inline-block; background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.3); color: #a5a0ff; border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+  .method-summary { display: block; font-size: 0.73rem; color: var(--text-muted); margin-top: 5px; max-width: 200px; line-height: 1.4; }
+
+  .biz-model { font-weight: 700; font-size: 0.8rem; color: #00d4aa; }
+  .biz-desc { display: block; font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; max-width: 180px; line-height: 1.4; }
+
+  .score-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .score-bar { height: 6px; background: var(--border); border-radius: 3px; flex: 1; min-width: 60px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+  .score-fill.engagement { background: linear-gradient(90deg, #6c63ff, #00d4aa); }
+  .score-fill.retention { background: linear-gradient(90deg, #ff6b9d, #ff9a56); }
+  .score-num { font-size: 0.78rem; font-weight: 700; color: var(--text); min-width: 28px; text-align: right; }
+  .stars { font-size: 0.7rem; display: block; margin-top: 3px; color: var(--text-muted); }
+
+  .hidden { display: none !important; }
+
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; padding: 16px 24px; border-top: 1px solid var(--border); background: var(--surface); }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-muted); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+</style>
+<script bis_use="true" data-savepage-type="text/javascript" type="text/plain" charset="utf-8" nonce="" data-dynamic-id="882a463a-9b6a-4a69-bd0b-f65078d81077" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script><style>
+  .imageye-selected {
+    outline: 2px solid black !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  }
+</style>
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="text/javascript">
+  "use strict";
+  window.addEventListener("DOMContentLoaded",
+  function(event) {
+    savepage_ShadowLoader(5);
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://browser-use-production-private.s3.us-east-2.amazonaws.com/bu/workspaces/0978a474-e63e-4f64-b0a7-b5e0eadef246/edtech_ranking.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA5JMST7Y2NQRZ7QX2/20260415/us-east-2/s3/aws4_request&X-Amz-Date=20260415T172235Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN///////////wEaCXVzLWVhc3QtMiJGMEQCIHkY509AQW0FqdoJdYlMrn93uP152U3mCG4AOEqWnrnPAiBc0r5RItynWrmje7NWHC8j/KPg8pKkh+kfGoSQHYYXaiqcBAio//////////8BEAAaDDkxMzUyNDkxNTc2NCIMLYJ9g3Ubyc+kiVIkKvAD+srJdLxhrAnA1hcjZWDUhpPPaRmdvhyQx4Rwt81Ma1pBXA7hbb8eMzrYvv38jM2JsF7PTy6qnzTOXB7pf430lbJitVckq5hKVvgvS/ZaTBD3X6QpQXkxXTSzIftpE2Cm2QqXcaz05vt6rTYsKDTYx7GkjcCgewtbIWp+Y0SuFjBCXrm9bL/z0vj+7LuJasHzrIyDH3MDEgg+cSlycRd7Se6rnwvVke2veLe4IyMDQrmqal6CcdS/b7KESwpszMdsDXRDNDHQlpzLWQB3DhViUvNgcxQTpMqnWKd4mUnY5U96qXpJhzWKeaFSyCsN/+OtxciqfsFE/GFq8B0sSJ/GtA6RXgQLqcF+9B2hKC5etebFX8p3vFEtfSRw3R1zC38x7ROBmN/VycGfIBOkv/50VTDfyBL/lYsWERs9sLbG6njXEinUaTL3XS6uwN4lVAUI/iAiAvxqSEbcacm6L1ddvy++9MHfcfXpY6gPnvxs4oTu6MrKHllII+1/ltWcpv8ODMUuhuB2XW/pHtM1Qpt5FBLYgmzjFm77Y/ul69W1TxYaibv3ObyJnEPsDbd2p/pQdWHvTj1Rjm40IMtKWZWMYmHMI8ERB6Y1+WaAl82QE0kWoh8vfdZp2G+T4PV5wXgDRl3RS4zxUfrQ4ka84FI0zDDp1/7OBjqnAdDabMMoKi0zz2FLJJO5vic+8zAZvnPZpdlyMSYdViQm62M6ksUX7tWo9e9KWpMSepCI7FTMX27DEZwySCJUOPTx3me7BFQmdsO8Qt439vZJPrkvEQm4fhF1JU3EF09/2G5J7nC2cZwPOoz5gCCjcwoxJxcba0ZNWGCybDiu4GPJRW2nou+w6qnCSG7CM9gq2ThDQzm4JomNTgBGiDhFfR3WNr7kmBvS&X-Amz-Signature=cb760776683ae44d7200b2520c169e33b9971f992f8a87d32f10b9def3c25272">
+<meta name="savepage-title" content="🎓 Ranking EdTechs — Tabela Interativa">
+<meta name="savepage-pubdate" content="Unknown">
+<meta name="savepage-from" content="https://browser-use-production-private.s3.us-east-2.amazonaws.com/bu/workspaces/0978a474-e63e-4f64-b0a7-b5e0eadef246/edtech_ranking.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA5JMST7Y2NQRZ7QX2/20260415/us-east-2/s3/aws4_request&X-Amz-Date=20260415T172235Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN///////////wEaCXVzLWVhc3QtMiJGMEQCIHkY509AQW0FqdoJdYlMrn93uP152U3mCG4AOEqWnrnPAiBc0r5RItynWrmje7NWHC8j/KPg8pKkh+kfGoSQHYYXaiqcBAio//////////8BEAAaDDkxMzUyNDkxNTc2NCIMLYJ9g3Ubyc+kiVIkKvAD+srJdLxhrAnA1hcjZWDUhpPPaRmdvhyQx4Rwt81Ma1pBXA7hbb8eMzrYvv38jM2JsF7PTy6qnzTOXB7pf430lbJitVckq5hKVvgvS/ZaTBD3X6QpQXkxXTSzIftpE2Cm2QqXcaz05vt6rTYsKDTYx7GkjcCgewtbIWp+Y0SuFjBCXrm9bL/z0vj+7LuJasHzrIyDH3MDEgg+cSlycRd7Se6rnwvVke2veLe4IyMDQrmqal6CcdS/b7KESwpszMdsDXRDNDHQlpzLWQB3DhViUvNgcxQTpMqnWKd4mUnY5U96qXpJhzWKeaFSyCsN/+OtxciqfsFE/GFq8B0sSJ/GtA6RXgQLqcF+9B2hKC5etebFX8p3vFEtfSRw3R1zC38x7ROBmN/VycGfIBOkv/50VTDfyBL/lYsWERs9sLbG6njXEinUaTL3XS6uwN4lVAUI/iAiAvxqSEbcacm6L1ddvy++9MHfcfXpY6gPnvxs4oTu6MrKHllII+1/ltWcpv8ODMUuhuB2XW/pHtM1Qpt5FBLYgmzjFm77Y/ul69W1TxYaibv3ObyJnEPsDbd2p/pQdWHvTj1Rjm40IMtKWZWMYmHMI8ERB6Y1+WaAl82QE0kWoh8vfdZp2G+T4PV5wXgDRl3RS4zxUfrQ4ka84FI0zDDp1/7OBjqnAdDabMMoKi0zz2FLJJO5vic+8zAZvnPZpdlyMSYdViQm62M6ksUX7tWo9e9KWpMSepCI7FTMX27DEZwySCJUOPTx3me7BFQmdsO8Qt439vZJPrkvEQm4fhF1JU3EF09/2G5J7nC2cZwPOoz5gCCjcwoxJxcba0ZNWGCybDiu4GPJRW2nou+w6qnCSG7CM9gq2ThDQzm4JomNTgBGiDhFfR3WNr7kmBvS&X-Amz-Signature=cb760776683ae44d7200b2520c169e33b9971f992f8a87d32f10b9def3c25272">
+<meta name="savepage-date" content="Wed Apr 15 2026 15:29:58 GMT-0300 (Brasilia Standard Time)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="33.9">
+<meta name="savepage-comments" content="">
+  </head>
+<body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjAuNDciLCJzY29yZSI6MjAwNDcwfV0=">
+
+<header>
+  <h1>🎓 Ranking Global de EdTechs</h1>
+  <p class="subtitle">Dados extraídos de YCombinator · ProductHunt · SaaSHub · BetaList · IndieHackers — Atualizado Abr 2026</p>
+  <div class="stats" bis_skin_checked="1">
+    <div class="stat-pill" bis_skin_checked="1"><span id="count-total">56</span> empresas</div>
+    <div class="stat-pill" bis_skin_checked="1"><span>5</span> fontes de dados</div>
+    <div class="stat-pill" bis_skin_checked="1">Clique nas colunas para ordenar</div>
+  </div>
+  <div class="controls" bis_skin_checked="1">
+    <input class="search-box" id="searchInput" placeholder="🔍  Buscar empresa, método, modelo..." oninput="filterTable()" value="">
+    <select class="filter-select" id="filterSource" onchange="filterTable()">
+      <option value="">📡 Todas as Fontes</option>
+      <option value="YCombinator">🟠 YCombinator</option>
+      <option value="ProductHunt">🔴 ProductHunt</option>
+      <option value="BetaList">🔵 BetaList</option>
+      <option value="SaaSHub">🟦 SaaSHub</option>
+    </select>
+    <select class="filter-select" id="filterBizModel" onchange="filterTable()">
+      <option value="">🏢 Todos os Modelos</option>
+      <option value="B2C">B2C</option>
+      <option value="B2B">B2B</option>
+      <option value="B2B2C">B2B2C</option>
+      <option value="P2P">P2P</option>
+      <option value="ISA">ISA</option>
+      <option value="Marketplace">Marketplace</option>
+      <option value="Nonprofit">Nonprofit</option>
+    </select>
+    <select class="filter-select" id="filterMethod" onchange="filterTable()">
+      <option value="">🧠 Todos os Métodos</option>
+      <option value="Gamificação">Gamificação</option>
+      <option value="AI Tutoring">AI Tutoring</option>
+      <option value="Cohort">Cohort-Based</option>
+      <option value="MOOC">Video / MOOC</option>
+      <option value="LMS">LMS</option>
+      <option value="Spaced Repetition">Spaced Repetition</option>
+      <option value="Peer">Peer-to-Peer</option>
+      <option value="Simulação">Simulação</option>
+      <option value="Assessment">Assessment</option>
+      <option value="Creator">Creator Economy</option>
+      <option value="Career">Career</option>
+    </select>
+    <button class="reset-btn" onclick="resetFilters()">↺ Resetar</button>
+  </div>
+</header>
+
+<div class="table-wrapper" bis_skin_checked="1">
+  <table id="mainTable">
+    <thead>
+      <tr>
+        <th data-col="rank" onclick="sortTable(0)" class="">Rank <span class="sort-icon">▲</span></th>
+        <th data-col="name" onclick="sortTable(1)">Empresa <span class="sort-icon">▲</span></th>
+        <th data-col="source" onclick="sortTable(2)" class="">Fonte <span class="sort-icon">▲</span></th>
+        <th data-col="year" onclick="sortTable(3)" class="">Ano <span class="sort-icon">▲</span></th>
+        <th data-col="method_tag" onclick="sortTable(4)" class="">Método (Tag) <span class="sort-icon">▲</span></th>
+        <th data-col="method_summary" onclick="sortTable(5)" class="">Método (Resumo) <span class="sort-icon">▲</span></th>
+        <th data-col="engagement" onclick="sortTable(6)" class="sort-desc">Engajamento <span class="sort-icon">▲</span></th>
+        <th data-col="biz_model" onclick="sortTable(7)" class="">Modelo de Negócio <span class="sort-icon">▲</span></th>
+        <th data-col="retention" onclick="sortTable(8)" class="">Retenção <span class="sort-icon">▲</span></th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"><tr class="top1">
+      <td><div class="rank-num" bis_skin_checked="1">🥇</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Duolingo <span style="font-size:0.65rem;color:var(--text-muted);">(Public)</span></div>
+        <a class="company-url" data-savepage-href="https://duolingo.com" href="https://duolingo.com/" target="_blank" rel="noopener">duolingo.com</a>
+        <span class="company-desc">Free language learning platform using gamification and AI.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2011</span></td>
+      <td><span class="method-tag">Gamificação</span></td>
+      <td><span class="method-summary">Aprende idiomas com streaks, XP, ligas e recompensas diárias.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:96%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">96</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium + Duolingo Plus (sem anúncios); Super e Max para IA tutoring.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="top2">
+      <td><div class="rank-num" bis_skin_checked="1">🥈</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Synthesis <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://synthesis.com" href="https://synthesis.com/" target="_blank" rel="noopener">synthesis.com</a>
+        <span class="company-desc">Collaborative problem-solving platform born from SpaceX schools.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2021</span></td>
+      <td><span class="method-tag">Gamificação</span></td>
+      <td><span class="method-summary">Desafios colaborativos e estratégicos que desenvolvem raciocínio e resolução de problemas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:92%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">92</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C</div>
+        <span class="biz-desc">Assinatura mensal para pais (~$22/mês por criança); born from SpaceX employee school.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:78%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">78</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="top3">
+      <td><div class="rank-num" bis_skin_checked="1">🥉</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Codesmith <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://codesmith.io" href="https://codesmith.io/" target="_blank" rel="noopener">codesmith.io</a>
+        <span class="company-desc">Software engineering immersive and residency programs.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2015</span></td>
+      <td><span class="method-tag">Cohort-Based Learning</span></td>
+      <td><span class="method-summary">Aprendizado em turmas ao vivo com colegas e instrutores em tempo determinado.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:92%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">92</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C + ISA</div>
+        <span class="biz-desc">Pago pelo aluno via mensalidade ou Income Share Agreement (% do salário futuro).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:50%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">50</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">4</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Lambda School <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://bloomtech.com" href="https://bloomtech.com/" target="_blank" rel="noopener">bloomtech.com</a>
+        <span class="company-desc">Income share agreement coding bootcamp for software engineering.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2017</span></td>
+      <td><span class="method-tag">Cohort-Based Learning</span></td>
+      <td><span class="method-summary">Bootcamp de engenharia de software com ISA — paga só após conseguir emprego.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:90%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">90</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C + ISA</div>
+        <span class="biz-desc">Income Share Agreement: sem custo inicial; 17% do salário por 24 meses após emprego.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:55%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">55</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">5</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Maven</div>
+        <a class="company-url" data-savepage-href="https://maven.com" href="https://maven.com/" target="_blank" rel="noopener">maven.com</a>
+        <span class="company-desc">Cohort-based courses platform for live, applied skill learning.</span>
+      </td>
+      <td><span class="source-badge src-ProductHunt">ProductHunt</span></td>
+      <td><span class="year-badge">2020</span></td>
+      <td><span class="method-tag">Cohort-Based Learning</span></td>
+      <td><span class="method-summary">Cursos ao vivo em cohorts com experts reais para aprendizado aplicado e networking.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:90%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">90</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C (Marketplace)</div>
+        <span class="biz-desc">Experts criam e vendem cohorts; Maven fica com % da receita por aluno.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:48%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">48</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">6</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Springboard <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://springboard.com" href="https://springboard.com/" target="_blank" rel="noopener">springboard.com</a>
+        <span class="company-desc">Career-focused online bootcamp with mentorship guarantee.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2013</span></td>
+      <td><span class="method-tag">Cohort-Based Learning</span></td>
+      <td><span class="method-summary">Bootcamp online com mentoria 1:1, projetos reais e garantia de emprego.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:88%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">88</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C + ISA</div>
+        <span class="biz-desc">Mensalidade ou ISA (partilha do salário futuro); foco em career-switchers.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:52%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">52</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">7</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">MagicSchool AI <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://magicschool.ai" href="https://magicschool.ai/" target="_blank" rel="noopener">magicschool.ai</a>
+        <span class="company-desc">AI-powered tools for teachers to plan lessons and differentiate instruction.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2023</span></td>
+      <td><span class="method-tag">AI para Professores</span></td>
+      <td><span class="method-summary">Suite de IA para professores: planos de aula, diferenciação, rubricas e comunicação.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Freemium para professores; venda para distritos escolares via licença institucional.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:75%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">75</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">8</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Khanmigo <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" href="https://khanacademy.org/khanmigo" target="_blank" rel="noopener">khanacademy.org/khanmigo</a>
+        <span class="company-desc">AI tutor and teaching assistant by Khan Academy.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2023</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">Freemium / Nonprofit</div>
+        <span class="biz-desc">Acesso gratuito financiado por doações, grants ou premium tiers para instituições.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">9</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Knowre <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://knowre.com" href="https://knowre.com/" target="_blank" rel="noopener">knowre.com</a>
+        <span class="company-desc">Adaptive math learning program that adjusts to each student.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">10</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Verbling <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://verbling.com" href="https://verbling.com/" target="_blank" rel="noopener">verbling.com</a>
+        <span class="company-desc">Online language learning with native tutors via live video.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2011</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">11</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Numerade <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://numerade.com" href="https://numerade.com/" target="_blank" rel="noopener">numerade.com</a>
+        <span class="company-desc">AI-powered STEM video learning platform.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2019</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">12</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Juni Learning <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://junilearning.com" href="https://junilearning.com/" target="_blank" rel="noopener">junilearning.com</a>
+        <span class="company-desc">Online computer science and math tutoring for kids.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2018</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">13</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Archie Note</div>
+        <a class="company-url" data-savepage-href="https://archienote.com" href="https://archienote.com/" target="_blank" rel="noopener">archienote.com</a>
+        <span class="company-desc">Note-taking app with AI quizzes and pay-as-you-go credits.</span>
+      </td>
+      <td><span class="source-badge src-BetaList">BetaList</span></td>
+      <td><span class="year-badge">2024</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">14</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Brilliaint</div>
+        <a class="company-url" data-savepage-href="https://brilliaint.com" href="https://brilliaint.com/" target="_blank" rel="noopener">brilliaint.com</a>
+        <span class="company-desc">Your notes become a 24/7 tutor that explains and quizzes you.</span>
+      </td>
+      <td><span class="source-badge src-BetaList">BetaList</span></td>
+      <td><span class="year-badge">2024</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">15</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">QWiser</div>
+        <a class="company-url" data-savepage-href="https://qwiser.com" href="https://qwiser.com/" target="_blank" rel="noopener">qwiser.com</a>
+        <span class="company-desc">Smarter way to learn with AI-driven personalized quizzes.</span>
+      </td>
+      <td><span class="source-badge src-ProductHunt">ProductHunt</span></td>
+      <td><span class="year-badge">2023</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">Tutoria personalizada por IA que adapta conteúdo ao ritmo de cada aluno.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:82%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">82</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">16</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Remind <span style="font-size:0.65rem;color:var(--text-muted);">(Acquired)</span></div>
+        <a class="company-url" data-savepage-href="https://remind.com" href="https://remind.com/" target="_blank" rel="noopener">remind.com</a>
+        <span class="company-desc">Communication platform connecting teachers, students, and parents.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2011</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">17</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">ClassDojo <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://classdojo.com" href="https://classdojo.com/" target="_blank" rel="noopener">classdojo.com</a>
+        <span class="company-desc">Classroom community app connecting teachers, students and parents.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2011</span></td>
+      <td><span class="method-tag">Ferramentas para Professores</span></td>
+      <td><span class="method-summary">Comunidade de sala de aula: portfolios, comportamento e comunicação família-escola.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Grátis para professores/pais; monetização via assinatura família (ClassDojo Beyond).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:78%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">78</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">18</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Noredink <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://noredink.com" href="https://noredink.com/" target="_blank" rel="noopener">noredink.com</a>
+        <span class="company-desc">Grammar and writing practice for K-12 students.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">19</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Learnerbly <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://learnerbly.com" href="https://learnerbly.com/" target="_blank" rel="noopener">learnerbly.com</a>
+        <span class="company-desc">Learning &amp; development platform for remote teams.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2016</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B</div>
+        <span class="biz-desc">Vende para empresas que treinam seus funcionários ou clientes na plataforma.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">20</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Labster <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://labster.com" href="https://labster.com/" target="_blank" rel="noopener">labster.com</a>
+        <span class="company-desc">Virtual science labs for universities using simulations.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Labs científicos em realidade virtual para estudantes de ciências e medicina.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B (Universidades)</div>
+        <span class="biz-desc">Licenciamento anual para universidades e colégios; substitui labs físicos.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:75%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">75</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">21</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Quill <span style="font-size:0.65rem;color:var(--text-muted);">(Nonprofit)</span></div>
+        <a class="company-url" data-savepage-href="https://quill.org" href="https://quill.org/" target="_blank" rel="noopener">quill.org</a>
+        <span class="company-desc">Free writing and grammar activities for students.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">22</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Seesaw <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://web.seesaw.me" href="https://web.seesaw.me/" target="_blank" rel="noopener">web.seesaw.me</a>
+        <span class="company-desc">Student engagement platform for K-12 learning portfolios.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2013</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">23</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">TeachQuill</div>
+        <a class="company-url" data-savepage-href="https://teachquill.com" href="https://teachquill.com/" target="_blank" rel="noopener">teachquill.com</a>
+        <span class="company-desc">Plan lessons, build quizzes, and align to standards in seconds.</span>
+      </td>
+      <td><span class="source-badge src-BetaList">BetaList</span></td>
+      <td><span class="year-badge">2024</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">24</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">PrettyFocused</div>
+        <a class="company-url" data-savepage-href="https://prettyfocused.com" href="https://prettyfocused.com/" target="_blank" rel="noopener">prettyfocused.com</a>
+        <span class="company-desc">Turn documents into ADHD-friendly, visual layouts for learning.</span>
+      </td>
+      <td><span class="source-badge src-BetaList">BetaList</span></td>
+      <td><span class="year-badge">2024</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">25</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Gryffi</div>
+        <a class="company-url" data-savepage-href="https://gryffi.com" href="https://gryffi.com/" target="_blank" rel="noopener">gryffi.com</a>
+        <span class="company-desc">Transform documents into interactive onboarding and training journeys.</span>
+      </td>
+      <td><span class="source-badge src-BetaList">BetaList</span></td>
+      <td><span class="year-badge">2024</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B</div>
+        <span class="biz-desc">Vende para empresas que treinam seus funcionários ou clientes na plataforma.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">26</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">My Growth Pitch</div>
+        <a class="company-url" data-savepage-href="https://mygrowhpitch.com" href="https://mygrowhpitch.com/" target="_blank" rel="noopener">mygrowhpitch.com</a>
+        <span class="company-desc">Master structured interview stories and practice delivery with AI.</span>
+      </td>
+      <td><span class="source-badge src-BetaList">BetaList</span></td>
+      <td><span class="year-badge">2024</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">27</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Audo</div>
+        <a class="company-url" data-savepage-href="https://audo.io" href="https://audo.io/" target="_blank" rel="noopener">audo.io</a>
+        <span class="company-desc">AI career concierge that guides your professional development path.</span>
+      </td>
+      <td><span class="source-badge src-ProductHunt">ProductHunt</span></td>
+      <td><span class="year-badge">2022</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">28</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Speaking AI</div>
+        <a class="company-url" data-savepage-href="https://speaking.ai" href="https://speaking.ai/" target="_blank" rel="noopener">speaking.ai</a>
+        <span class="company-desc">Learn languages by having real AI-powered conversations.</span>
+      </td>
+      <td><span class="source-badge src-ProductHunt">ProductHunt</span></td>
+      <td><span class="year-badge">2023</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">29</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">FunBlocks AIFlow</div>
+        <a class="company-url" data-savepage-href="https://funblocks.net" href="https://funblocks.net/" target="_blank" rel="noopener">funblocks.net</a>
+        <span class="company-desc">AI-powered whiteboard and mindmap for learning and exploration.</span>
+      </td>
+      <td><span class="source-badge src-ProductHunt">ProductHunt</span></td>
+      <td><span class="year-badge">2023</span></td>
+      <td><span class="method-tag">Simulação / Lab Virtual</span></td>
+      <td><span class="method-summary">Ambientes virtuais para praticar habilidades técnicas ou científicas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:80%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">80</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">30</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Codecademy <span style="font-size:0.65rem;color:var(--text-muted);">(Acquired)</span></div>
+        <a class="company-url" data-savepage-href="https://codecademy.com" href="https://codecademy.com/" target="_blank" rel="noopener">codecademy.com</a>
+        <span class="company-desc">The leading online learning platform for technical skills.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2011</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Cursos interativos de programação com exercícios práticos no browser.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:78%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">78</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium + plano Pro pago; também B2B para empresas via Teams.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:55%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">55</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">31</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Brainly <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://brainly.com" href="https://brainly.com/" target="_blank" rel="noopener">brainly.com</a>
+        <span class="company-desc">Peer-to-peer homework help platform with millions of students.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2009</span></td>
+      <td><span class="method-tag">Peer-to-Peer Learning</span></td>
+      <td><span class="method-summary">Alunos se ajudam em dúvidas de lição de casa; IA verifica e amplifica respostas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:78%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">78</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">P2P + Freemium</div>
+        <span class="biz-desc">P2P com modelo freemium; premium remove anúncios e dá acesso ilimitado à IA.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:52%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">52</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">32</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Piazza <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://piazza.com" href="https://piazza.com/" target="_blank" rel="noopener">piazza.com</a>
+        <span class="company-desc">Q&amp;A platform for students and instructors to collaborate.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2009</span></td>
+      <td><span class="method-tag">Peer-to-Peer Learning</span></td>
+      <td><span class="method-summary">Aprendizado colaborativo entre pares via troca de conhecimento e dúvidas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:78%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">78</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">P2P + Freemium</div>
+        <span class="biz-desc">Usuários ensinam outros usuários; monetização via premium features ou publicidade.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:55%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">55</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">33</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">StudySmarter <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://studysmarter.de" href="https://studysmarter.de/" target="_blank" rel="noopener">studysmarter.de</a>
+        <span class="company-desc">AI-powered study app with flashcards and quizzes.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2017</span></td>
+      <td><span class="method-tag">AI Tutoring</span></td>
+      <td><span class="method-summary">App de estudo com flashcards IA, resumos automáticos e plano de estudos adaptativo.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:78%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">78</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium + StudySmarter Premium; parceiros institucionais e B2B para empresas.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:70%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">70</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">34</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Edpuzzle <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://edpuzzle.com" href="https://edpuzzle.com/" target="_blank" rel="noopener">edpuzzle.com</a>
+        <span class="company-desc">Interactive video platform for teachers to create engaging lessons.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2013</span></td>
+      <td><span class="method-tag">Ferramentas para Professores</span></td>
+      <td><span class="method-summary">Vídeos interativos com questões embutidas; professores acompanham progresso individual.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:76%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">76</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Grátis para professores com limite; premium por escola/distrito; monetiza via B2B.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:73%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">73</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">35</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Khan Academy</div>
+        <a class="company-url" data-savepage-href="https://khanacademy.org" href="https://khanacademy.org/" target="_blank" rel="noopener">khanacademy.org</a>
+        <span class="company-desc">Free world-class education for anyone, anywhere.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2008</span></td>
+      <td><span class="method-tag">Aprendizado Adaptativo</span></td>
+      <td><span class="method-summary">Trilhas de aprendizado gratuitas com vídeos, exercícios adaptativos e progresso gamificado.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:74%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">74</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">Freemium / Nonprofit</div>
+        <span class="biz-desc">100% gratuito para estudantes; financiado por doações de fundações (Gates, Google, etc.).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:70%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">70</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">36</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Quizlet</div>
+        <a class="company-url" data-savepage-href="https://quizlet.com" href="https://quizlet.com/" target="_blank" rel="noopener">quizlet.com</a>
+        <span class="company-desc">Study tools using flashcards, tests, and games.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2005</span></td>
+      <td><span class="method-tag">Spaced Repetition</span></td>
+      <td><span class="method-summary">Flashcards e jogos de estudo gerados por IA ou comunidade para qualquer matéria.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:72%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">72</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium + Quizlet Plus; Quizlet Teacher para educadores.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:68%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">68</div>
+        </div>
+        <span class="stars">★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">37</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Forage <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://theforage.com" href="https://theforage.com/" target="_blank" rel="noopener">theforage.com</a>
+        <span class="company-desc">Virtual work experience programs from top companies.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2018</span></td>
+      <td><span class="method-tag">Career Learning</span></td>
+      <td><span class="method-summary">Programas de experiência profissional virtual patrocinados por empresas Fortune 500.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:68%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">68</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B (Empresas pagam, estudantes grátis)</div>
+        <span class="biz-desc">Empresas financiam para recrutar talentos; estudantes completam gratuitamente.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:30%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">30</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">38</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Magoosh <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://magoosh.com" href="https://magoosh.com/" target="_blank" rel="noopener">magoosh.com</a>
+        <span class="company-desc">Online test prep for GRE, GMAT, SAT, ACT and other exams.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2009</span></td>
+      <td><span class="method-tag">Assessment &amp; Test Prep</span></td>
+      <td><span class="method-summary">Preparação para GRE, GMAT, SAT com vídeos, questões adaptativas e analytics.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:65%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">65</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C</div>
+        <span class="biz-desc">Assinatura temporária por exame (ex: 6 meses GRE prep); modelo pay-per-goal.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:35%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">35</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">39</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Anki</div>
+        <a class="company-url" data-savepage-href="https://apps.ankiweb.net" href="https://apps.ankiweb.net/" target="_blank" rel="noopener">apps.ankiweb.net</a>
+        <span class="company-desc">Spaced-repetition flashcard system for memory retention.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2006</span></td>
+      <td><span class="method-tag">Spaced Repetition</span></td>
+      <td><span class="method-summary">Flashcards com algoritmo SM-2 para revisão no momento certo antes do esquecimento.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:65%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">65</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Open Source</div>
+        <span class="biz-desc">Gratuito no desktop; app iOS pago ($24.99); AnkiWeb gratuito para sincronização.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:90%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">90</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">40</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Teachable</div>
+        <a class="company-url" data-savepage-href="https://teachable.com" href="https://teachable.com/" target="_blank" rel="noopener">teachable.com</a>
+        <span class="company-desc">Create and sell online courses with no technical expertise.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2013</span></td>
+      <td><span class="method-tag">Creator Economy / Marketplace</span></td>
+      <td><span class="method-summary">Plataforma para criadores lançarem cursos, membros e coaching com marca própria.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:62%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">62</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C (Marketplace)</div>
+        <span class="biz-desc">Criadores pagam plano mensal; Teachable cobra taxa por transação no plano básico.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:55%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">55</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">41</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Gradescope <span style="font-size:0.65rem;color:var(--text-muted);">(Acquired)</span></div>
+        <a class="company-url" data-savepage-href="https://gradescope.com" href="https://gradescope.com/" target="_blank" rel="noopener">gradescope.com</a>
+        <span class="company-desc">AI-assisted grading and assessment platform for universities.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2014</span></td>
+      <td><span class="method-tag">Assessment &amp; Test Prep</span></td>
+      <td><span class="method-summary">Correção e rubrica assistida por IA para provas e trabalhos universitários.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B (Universidades)</div>
+        <span class="biz-desc">Licenciamento para departamentos e universidades; adquirido pela Turnitin.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:88%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">88</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">42</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Kira Talent <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://kiratalent.com" href="https://kiratalent.com/" target="_blank" rel="noopener">kiratalent.com</a>
+        <span class="company-desc">Video assessment platform for admissions and hiring.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Aulas em vídeo assíncrono com trilhas de aprendizado e certificados.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B</div>
+        <span class="biz-desc">Vende para empresas que treinam seus funcionários ou clientes na plataforma.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:48%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">48</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">43</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Mimo <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://mimo.org" href="https://mimo.org/" target="_blank" rel="noopener">mimo.org</a>
+        <span class="company-desc">Mobile coding lessons and programming education.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2016</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Aulas em vídeo assíncrono com trilhas de aprendizado e certificados.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:48%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">48</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">44</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Udemy</div>
+        <a class="company-url" data-savepage-href="https://udemy.com" href="https://udemy.com/" target="_blank" rel="noopener">udemy.com</a>
+        <span class="company-desc">Online marketplace for courses across all topics.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2010</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Marketplace de cursos em vídeo de instrutores independentes em qualquer área.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C (Marketplace)</div>
+        <span class="biz-desc">Creators vendem cursos; Udemy recebe comissão; Udemy Business para empresas.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:40%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">40</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">45</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Pluralsight</div>
+        <a class="company-url" data-savepage-href="https://pluralsight.com" href="https://pluralsight.com/" target="_blank" rel="noopener">pluralsight.com</a>
+        <span class="company-desc">Technology skills platform for individuals and teams.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2004</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Aulas em vídeo assíncrono com trilhas de aprendizado e certificados.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B</div>
+        <span class="biz-desc">Vende para empresas que treinam seus funcionários ou clientes na plataforma.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:48%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">48</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">46</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Treehouse</div>
+        <a class="company-url" data-savepage-href="https://teamtreehouse.com" href="https://teamtreehouse.com/" target="_blank" rel="noopener">teamtreehouse.com</a>
+        <span class="company-desc">Online platform teaching web design, development and coding.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2010</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Aulas em vídeo assíncrono com trilhas de aprendizado e certificados.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:48%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">48</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">47</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Coursey</div>
+        <a class="company-url" data-savepage-href="https://coursey.app" href="https://coursey.app/" target="_blank" rel="noopener">coursey.app</a>
+        <span class="company-desc">AI-powered course creation in minutes for educators and creators.</span>
+      </td>
+      <td><span class="source-badge src-ProductHunt">ProductHunt</span></td>
+      <td><span class="year-badge">2023</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">Aulas em vídeo assíncrono com trilhas de aprendizado e certificados.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:60%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">60</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C (Marketplace)</div>
+        <span class="biz-desc">Creators criam e vendem cursos; plataforma cobra comissão sobre as transações.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:48%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">48</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">48</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Clever <span style="font-size:0.65rem;color:var(--text-muted);">(Acquired)</span></div>
+        <a class="company-url" data-savepage-href="https://clever.com" href="https://clever.com/" target="_blank" rel="noopener">clever.com</a>
+        <span class="company-desc">Single sign-on platform that powers technology in K-12 classrooms.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Ferramentas para Professores</span></td>
+      <td><span class="method-summary">SSO e integração de apps educacionais para K-12; conecta professores, alunos e sistemas.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:58%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">58</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B (SaaS para Distritos)</div>
+        <span class="biz-desc">Vende licenças para distritos escolares; apps educacionais pagam para integrar na plataforma.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:90%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">90</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">49</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Coursera <span style="font-size:0.65rem;color:var(--text-muted);">(Public)</span></div>
+        <a class="company-url" data-savepage-href="https://coursera.org" href="https://coursera.org/" target="_blank" rel="noopener">coursera.org</a>
+        <span class="company-desc">Online courses from top universities and companies worldwide.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Video Learning / MOOC</span></td>
+      <td><span class="method-summary">MOOCs de universidades top globais com certificados, especializações e graus.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:58%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">58</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C + B2B</div>
+        <span class="biz-desc">Individual (assinatura Plus); empresas via Coursera for Business; universidades via parceria.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:45%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">45</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">50</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">FlexiQuiz</div>
+        <a class="company-url" data-savepage-href="https://flexiquiz.com" href="https://flexiquiz.com/" target="_blank" rel="noopener">flexiquiz.com</a>
+        <span class="company-desc">Online quiz and test generator for education and business.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2014</span></td>
+      <td><span class="method-tag">Assessment &amp; Test Prep</span></td>
+      <td><span class="method-summary">Foco em preparação para exames e avaliação contínua de desempenho.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:58%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">58</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:45%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">45</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">51</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Photomath <span style="font-size:0.65rem;color:var(--text-muted);">(Acquired)</span></div>
+        <a class="company-url" data-savepage-href="https://photomath.com" href="https://photomath.com/" target="_blank" rel="noopener">photomath.com</a>
+        <span class="company-desc">Camera-based math problem solver with step-by-step explanations.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2014</span></td>
+      <td><span class="method-tag">EdTech Geral</span></td>
+      <td><span class="method-summary">Plataforma educacional com múltiplas funcionalidades para ensino e aprendizado.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:55%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">55</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:50%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">50</div>
+        </div>
+        <span class="stars">★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">52</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">TalentLMS</div>
+        <a class="company-url" data-savepage-href="https://talentlms.com" href="https://talentlms.com/" target="_blank" rel="noopener">talentlms.com</a>
+        <span class="company-desc">Cloud LMS to train employees, partners, customers or students.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">LMS / Gestão de Aprendizado</span></td>
+      <td><span class="method-summary">Plataforma institucional para gestão de cursos, avaliações e relatórios.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:42%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">42</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:90%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">90</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">53</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">PowerSchool</div>
+        <a class="company-url" data-savepage-href="https://powerschool.com" href="https://powerschool.com/" target="_blank" rel="noopener">powerschool.com</a>
+        <span class="company-desc">K-12 education technology platform for operations and student data.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">1997</span></td>
+      <td><span class="method-tag">LMS / Gestão de Aprendizado</span></td>
+      <td><span class="method-summary">Plataforma institucional para gestão de cursos, avaliações e relatórios.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:42%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">42</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:90%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">90</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">54</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Moodle</div>
+        <a class="company-url" data-savepage-href="https://moodle.org" href="https://moodle.org/" target="_blank" rel="noopener">moodle.org</a>
+        <span class="company-desc">World's most popular open-source learning management system.</span>
+      </td>
+      <td><span class="source-badge src-SaaSHub">SaaSHub</span></td>
+      <td><span class="year-badge">2002</span></td>
+      <td><span class="method-tag">LMS / Gestão de Aprendizado</span></td>
+      <td><span class="method-summary">LMS open-source customizável, usado por universidades e empresas globalmente.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:40%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">40</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B (Open Source + SaaS)</div>
+        <span class="biz-desc">Código aberto gratuito; receita via MoodleCloud (SaaS) e parceiros certificados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:92%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">92</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">55</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Panorama Education <span style="font-size:0.65rem;color:var(--text-muted);">(Active)</span></div>
+        <a class="company-url" data-savepage-href="https://panoramaed.com" href="https://panoramaed.com/" target="_blank" rel="noopener">panoramaed.com</a>
+        <span class="company-desc">Student success platform with data analytics for K-12 districts.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2012</span></td>
+      <td><span class="method-tag">Education Analytics</span></td>
+      <td><span class="method-summary">Plataforma de dados para gestores escolares tomarem decisões baseadas em evidências.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:35%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">35</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2B2C</div>
+        <span class="biz-desc">Vende para escolas/distritos (B2B) que distribuem o produto para alunos e pais (B2C).</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:92%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">92</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr><tr class="">
+      <td><div class="rank-num" bis_skin_checked="1">56</div></td>
+      <td>
+        <div class="company-name" bis_skin_checked="1">Wootric <span style="font-size:0.65rem;color:var(--text-muted);">(Acquired)</span></div>
+        <a class="company-url" data-savepage-href="https://wootric.com" href="https://wootric.com/" target="_blank" rel="noopener">wootric.com</a>
+        <span class="company-desc">Customer feedback and NPS platform used in EdTech.</span>
+      </td>
+      <td><span class="source-badge src-YCombinator">YCombinator</span></td>
+      <td><span class="year-badge">2013</span></td>
+      <td><span class="method-tag">Education Analytics</span></td>
+      <td><span class="method-summary">Plataforma de dados para gestores escolares tomarem decisões baseadas em evidências.</span></td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1">
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill engagement" style="width:35%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">35</div>
+        </div>
+        <span class="stars">★★</span>
+      </td>
+      <td>
+        <div class="biz-model" bis_skin_checked="1">B2C / Freemium</div>
+        <span class="biz-desc">Freemium com plano gratuito e assinatura paga para recursos avançados.</span>
+      </td>
+      <td>
+        <div class="score-bar-wrap" bis_skin_checked="1"
+          <div class="score-bar" bis_skin_checked="1"><div class="score-fill retention" style="width:92%" bis_skin_checked="1"></div></div>
+          <div class="score-num" bis_skin_checked="1">92</div>
+        </div>
+        <span class="stars">★★★★★</span>
+      </td>
+    </tr></tbody>
+  </table>
+  <div style="text-align:center; padding: 12px; color: var(--text-muted); font-size:0.8rem;" id="noResults" class="hidden" bis_skin_checked="1">
+    Nenhuma empresa encontrada com esses filtros.
+  </div>
+</div>
+
+<div class="legend" bis_skin_checked="1">
+  <div style="font-size:0.75rem;color:var(--text-muted);font-weight:600;margin-right:8px;" bis_skin_checked="1">FONTES:</div>
+  <div class="legend-item" bis_skin_checked="1"><div class="legend-dot" style="background:#ff6b00" bis_skin_checked="1"></div> YCombinator</div>
+  <div class="legend-item" bis_skin_checked="1"><div class="legend-dot" style="background:#da552f" bis_skin_checked="1"></div> ProductHunt</div>
+  <div class="legend-item" bis_skin_checked="1"><div class="legend-dot" style="background:#1da1f2" bis_skin_checked="1"></div> BetaList</div>
+  <div class="legend-item" bis_skin_checked="1"><div class="legend-dot" style="background:#0b61c5" bis_skin_checked="1"></div> SaaSHub</div>
+  <div style="font-size:0.75rem;color:var(--text-muted);margin-left:16px;" bis_skin_checked="1">⚡ Benchmarks preditivos baseados em modelos de negócio, método pedagógico e padrões do setor.</div>
+</div>
+
+<script data-savepage-type="" type="text/plain"></script>
+
+<span id="__TIMER_INJECTION_FLAG__dkdhhcbjijekmneelocdllcldcpmekmm" style="visibility: hidden;"></span><div bis_skin_checked="1" style="color-scheme: unset; forced-color-adjust: unset; math-depth: unset; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: unset; font: unset; font-palette: unset; font-synthesis: unset; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; place-items: unset; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; animation-trigger: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background: unset; background-blend-mode: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: unset; border-radius: unset; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-shape: unset; border-start-end-radius: unset; border-start-start-radius: unset; bottom: unset; box-decoration-break: unset; box-shadow: unset; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-animation: unset; caret-color: unset; caret-shape: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: unset; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; corner-shape: unset; corner-block-end-shape: unset; corner-block-start-shape: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: unset; cx: unset; cy: unset; d: unset; display: unset; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interactivity: unset; interest-delay: unset; interpolate-size: unset; isolation: unset; letter-spacing: unset; lighting-color: unset; line-break: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: unset; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: unset; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; right: unset; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-target-group: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-autospace: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-justify: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; timeline-trigger: unset; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: unset; translate: unset; trigger-scope: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-group: unset; view-transition-name: unset; view-transition-scope: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: unset; position: absolute; top: 0px; left: 0px;"><div bis_skin_checked="1" style="color-scheme: unset; forced-color-adjust: unset; math-depth: unset; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: unset; font: unset; font-palette: unset; font-synthesis: unset; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; place-items: unset; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; animation-trigger: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background: unset; background-blend-mode: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: unset; border-radius: unset; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-shape: unset; border-start-end-radius: unset; border-start-start-radius: unset; bottom: unset; box-decoration-break: unset; box-shadow: unset; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-animation: unset; caret-color: unset; caret-shape: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: unset; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; corner-shape: unset; corner-block-end-shape: unset; corner-block-start-shape: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: unset; cx: unset; cy: unset; d: unset; display: unset; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interactivity: unset; interest-delay: unset; interpolate-size: unset; isolation: unset; letter-spacing: unset; lighting-color: unset; line-break: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: unset; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: unset; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; right: unset; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-target-group: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-autospace: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-justify: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; timeline-trigger: unset; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: unset; translate: unset; trigger-scope: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-group: unset; view-transition-name: unset; view-transition-scope: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: unset; position: absolute; top: 0px; left: 0px;"><template data-savepage-shadowroot=""><link rel="stylesheet" href="chrome-extension://gbefmodhlophhakmoecijeppjblibmie/contentscript.css"></template></div></div></body></html>
