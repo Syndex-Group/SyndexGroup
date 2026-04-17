@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛠️ Ferramentas de Execução para PMEs</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#F1F5F9;color:#1E293B;min-height:100vh}
+
+header{background:linear-gradient(135deg,#1E293B,#334155);color:#fff;padding:36px 24px;text-align:center}
+header h1{font-size:1.8rem;font-weight:800;margin-bottom:6px}
+header p{color:#94A3B8;font-size:.9rem;max-width:640px;margin:0 auto}
+
+.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:20px 24px;background:#fff;border-bottom:1px solid #E2E8F0}
+.stat-n{font-size:1.8rem;font-weight:800;color:#4F46E5;text-align:center}
+.stat-l{font-size:.7rem;color:#64748B;text-transform:uppercase;letter-spacing:.06em;text-align:center}
+
+/* FILTERS */
+.filters-bar{background:#fff;border-bottom:1px solid #E2E8F0;padding:16px 24px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.filter-group{display:flex;flex-direction:column;gap:4px}
+.filter-group label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#64748B}
+select,input[type=text]{padding:7px 12px;border:1.5px solid #CBD5E1;border-radius:7px;font-size:.82rem;color:#1E293B;background:#fff;outline:none;min-width:140px}
+select:focus,input:focus{border-color:#4F46E5}
+.btn-reset{padding:7px 16px;background:#EF4444;color:#fff;border:none;border-radius:7px;font-size:.82rem;font-weight:700;cursor:pointer}
+.btn-reset:hover{background:#DC2626}
+
+.col-legend{display:flex;gap:16px;flex-wrap:wrap;padding:12px 24px;background:#F8FAFC;border-bottom:1px solid #E2E8F0}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:.75rem;color:#475569}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;padding:24px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:.82rem}
+
+thead tr{background:#1E293B;color:#fff}
+th{padding:13px 14px;text-align:left;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+th.col-util{background:#15803D}
+th.col-need{background:#6D28D9}
+th.col-easy{background:#0369A1}
+
+tbody tr{border-bottom:1px solid #F1F5F9;transition:background .1s}
+tbody tr:hover{background:#F8FAFC}
+tbody tr.hidden{display:none}
+td{padding:12px 14px;vertical-align:top}
+
+.tool-name{font-weight:700;color:#0F172A;margin-bottom:2px}
+.tool-tagline{font-size:.74rem;color:#64748B;font-style:italic}
+.cat-tag{display:inline-block;background:#EFF6FF;color:#1D4ED8;font-size:.66rem;font-weight:600;padding:2px 7px;border-radius:4px;margin-top:4px}
+.source-tag{display:inline-block;background:#F1F5F9;color:#475569;font-size:.66rem;font-weight:600;padding:2px 7px;border-radius:4px;margin-left:4px;margin-top:4px}
+
+.badge{display:inline-block;color:#fff;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+
+.detail-btn{background:none;border:1.5px solid #CBD5E1;border-radius:6px;padding:3px 10px;font-size:.72rem;color:#475569;cursor:pointer;margin-top:4px}
+.detail-btn:hover{border-color:#4F46E5;color:#4F46E5}
+
+.drawer{display:none;background:#F8FAFC;border-top:1px solid #E2E8F0}
+.drawer td{padding:10px 14px 14px 40px}
+.drawer-inner{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.d-label{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#94A3B8;margin-bottom:3px}
+.d-text{font-size:.78rem;color:#374151;line-height:1.5}
+.stack-pills span{display:inline-block;background:#EFF6FF;color:#1D4ED8;font-size:.68rem;font-weight:600;padding:2px 7px;border-radius:4px;margin:2px;font-family:monospace}
+.ext-link{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;font-weight:700;color:#4F46E5;text-decoration:none;padding:5px 12px;border-radius:6px;border:1.5px solid #C7D2FE;margin-top:6px}
+.ext-link:hover{background:#4F46E5;color:#fff}
+
+.no-results{text-align:center;padding:48px;color:#94A3B8;font-size:.95rem}
+
+/* score bar */
+.score-wrap{display:flex;align-items:center;gap:6px}
+.score-bar-bg{flex:1;height:5px;background:#E2E8F0;border-radius:3px;min-width:50px}
+.score-bar{height:5px;border-radius:3px}
+
+@media(max-width:768px){
+  .drawer-inner{grid-template-columns:1fr}
+  th,td{padding:10px 8px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🛠️ Ferramentas de Execução para PMEs</h1>
+  <p>Scraping de <strong>YCombinator · BetaList · SaaSHub · ProductHunt</strong> — 150 ferramentas analisadas, 21 curadas com baixa barreira tecnológica</p>
+</header>
+
+<div class="stats">
+  <div><div class="stat-n">21</div><div class="stat-l">Ferramentas Curadas</div></div>
+  <div><div class="stat-n">150</div><div class="stat-l">Analisadas</div></div>
+  <div><div class="stat-n">4</div><div class="stat-l">Fontes</div></div>
+  <div><div class="stat-n">10</div><div class="stat-l">Categorias</div></div>
+</div>
+
+<div class="col-legend">
+  <strong style="font-size:.78rem;color:#1E293B;align-self:center">Colunas de classificação:</strong>
+  <div class="legend-item"><div class="legend-dot" style="background:#15803D"></div> <b>Mais úteis</b> — ferramenta gera valor real, mas PMEs não usam</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6D28D9"></div> <b>Mais necessitadas</b> — PMEs têm essa dor mas não têm solução</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#0369A1"></div> <b>Mais fáceis</b> — plug-and-play, zero barreira, PMEs simplesmente não conhecem</div>
+</div>
+
+<div class="filters-bar">
+  <div class="filter-group">
+    <label>🔍 Buscar</label>
+    <input type="text" id="f-search" placeholder="Nome ou descrição...">
+  </div>
+  <div class="filter-group">
+    <label>📁 Categoria</label>
+    <select id="f-cat"><option value="">Todas</option><option value="Assessment IA">Assessment IA</option><option value="Desenvolvimento de Equipe">Desenvolvimento de Equipe</option><option value="Gestão & Coaching">Gestão & Coaching</option><option value="Idiomas para Negócios">Idiomas para Negócios</option><option value="LMS">LMS</option><option value="Microlearning">Microlearning</option><option value="Onboarding & Treinamento">Onboarding & Treinamento</option><option value="Pitch & Entrevista">Pitch & Entrevista</option><option value="Plataforma de Cursos">Plataforma de Cursos</option><option value="Quiz & Avaliação">Quiz & Avaliação</option></select>
+  </div>
+  <div class="filter-group">
+    <label>🌐 Fonte</label>
+    <select id="f-src"><option value="">Todas</option><option value="BetaList">BetaList</option><option value="ProductHunt">ProductHunt</option><option value="SaaSHub">SaaSHub</option><option value="YCombinator">YCombinator</option></select>
+  </div>
+  <div class="filter-group">
+    <label>🟢 Utilidade (PMEs não usam)</label>
+    <select id="f-util"><option value="">Todas</option><option>Alta</option><option>Média</option><option>Baixa</option></select>
+  </div>
+  <div class="filter-group">
+    <label>🟣 Necessidade (PMEs não têm)</label>
+    <select id="f-need"><option value="">Todas</option><option>Alta</option><option>Média</option><option>Baixa</option></select>
+  </div>
+  <div class="filter-group">
+    <label>🔵 Facilidade de uso</label>
+    <select id="f-easy"><option value="">Todas</option><option>Alta</option><option>Média</option><option>Baixa</option></select>
+  </div>
+  <div class="filter-group">
+    <label>⚙️ Barreira Técnica</label>
+    <select id="f-barrier"><option value="">Todas</option><option value="Muito Baixa">⭐ Muito Baixa</option><option value="Baixa">⭐⭐ Baixa</option></select>
+  </div>
+  <button class="btn-reset" onclick="resetFilters()">✕ Limpar</button>
+</div>
+
+<div class="table-wrap">
+<table id="main-table">
+<thead>
+<tr>
+  <th style="min-width:200px">Ferramenta</th>
+  <th style="min-width:130px">Categoria</th>
+  <th style="min-width:110px">Barreira Técnica</th>
+  <th class="col-util" style="min-width:170px">🔥 Mais úteis mas PMEs não usam</th>
+  <th class="col-need" style="min-width:170px">😰 Mais necessitadas mas PMEs não têm</th>
+  <th class="col-easy" style="min-width:170px">✅ Mais fáceis de usar mas PMEs não usam</th>
+  <th style="min-width:70px">Fonte</th>
+  <th style="min-width:60px">Detalhes</th>
+</tr>
+</thead>
+<tbody id="table-body">
+</tbody>
+</table>
+<div class="no-results" id="no-results" style="display:none">Nenhuma ferramenta encontrada com esses filtros.</div>
+</div>
+
+<script>
+const DATA = [{"name": "Gryffi", "tagline": "Transform documents into interactive onboarding and training journeys", "source": "BetaList", "cat": "Onboarding & Treinamento", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "Converte documentos da empresa em trilhas interativas de treinamento para novos funcionários", "how": "Upload de PDF → gerador de quiz/trilha via LLM → interface web simples", "stack": "Next.js + OpenAI API + PDF parser", "url": "https://betalist.com/startups/gryffi"}, {"name": "TalentLMS", "tagline": "LMS completo para treinamento de equipes corporativas", "source": "SaaSHub", "cat": "LMS", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Média", "why": "Plataforma de e-learning para treinar funcionários, com quizzes, certificados e rastreamento de progresso", "how": "LMS básico: usuários + cursos (vídeo/texto) + quiz + certificado", "stack": "Rails/Django + banco relacional + upload de vídeo (S3)", "url": "https://www.saashub.com/software/talent-lms"}, {"name": "iSpring QuizMaker", "tagline": "Create interactive quizzes, tests and assessments for employee training", "source": "SaaSHub", "cat": "Quiz & Avaliação", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Média", "facilidade": "Alta", "why": "Cria avaliações e quizzes de treinamento sem código. Ideal para RH e gestores", "how": "Builder de quiz drag-and-drop com tipos de questão, timer, resultado e exportação", "stack": "React + banco simples", "url": "https://www.saashub.com/software/ispring-quizmaker"}, {"name": "Emerge Career", "tagline": "All-in-one workforce development training platform", "source": "YCombinator", "cat": "Desenvolvimento de Equipe", "barrier": "⭐⭐ Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Média", "why": "Plataforma completa de desenvolvimento de carreira e treinamento profissional para PMEs", "how": "LMS + trilhas de carreira + acompanhamento de progresso + marketplace de cursos", "stack": "Next.js + Supabase", "url": "https://www.ycombinator.com/companies/emerge-career"}, {"name": "MySivi", "tagline": "AI English Speaking Practice App", "source": "YCombinator", "cat": "Idiomas para Negócios", "barrier": "⭐⭐ Baixa", "util": "Média", "necessidade": "Média", "facilidade": "Alta", "why": "Treina funcionários em inglês para negócios via conversação com IA — essencial para PMEs que exportam ou atendem clientes internacionais", "how": "Interface de voz + Speech-to-Text + LLM para feedback + histórico de sessões", "stack": "Web Speech API + OpenAI GPT", "url": "https://www.ycombinator.com/companies/mysivi"}, {"name": "SpeakPal AI", "tagline": "AI language learning platform for professionals", "source": "SaaSHub", "cat": "Idiomas para Negócios", "barrier": "⭐⭐ Baixa", "util": "Média", "necessidade": "Média", "facilidade": "Média", "why": "Prática de conversação em idiomas estrangeiros para equipes — expandir negócio internacionalmente", "how": "Conversação por voz com IA + avaliação de pronúncia + lições temáticas de negócios", "stack": "Whisper + GPT-4o", "url": "https://www.saashub.com/software/speakpal-ai"}, {"name": "Toko", "tagline": "Learn English by speaking with an AI", "source": "YCombinator", "cat": "Idiomas para Negócios", "barrier": "⭐ Muito Baixa", "util": "Média", "necessidade": "Média", "facilidade": "Alta", "why": "Treina comunicação verbal em inglês — útil para atendimento ao cliente e vendas internacionais", "how": "Chat de voz + TTS + STT + GPT para feedback. Chatbot conversacional simples com níveis.", "stack": "", "url": "https://www.ycombinator.com/companies/toko"}, {"name": "Arcway", "tagline": "Practice interviews with real-time AI feedback and voice analysis", "source": "BetaList", "cat": "Pitch & Entrevista", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Média", "facilidade": "Alta", "why": "Treina candidatos e funcionários em entrevistas com feedback de IA em tempo real — perfeito para RH de PMEs", "how": "Perguntas de entrevista por voz + transcrição + LLM para feedback + scoring", "stack": "Web Speech + OpenAI", "url": "https://betalist.com/startups/arcway"}, {"name": "My Growth Pitch", "tagline": "Master structured interview stories and practice delivery", "source": "BetaList", "cat": "Pitch & Entrevista", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "Ajuda donos de PMEs e equipes a estruturar e praticar pitches e apresentações de negócios", "how": "Framework STAR/situação + gravador de voz + feedback LLM + templates de pitch", "stack": "React + OpenAI", "url": "https://betalist.com/startups/my-growth-pitch"}, {"name": "Memochat", "tagline": "Turn AI Chats into Flashcards, Notes & Quizzes", "source": "ProductHunt", "cat": "Microlearning", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "Transforma conteúdo de reuniões/chats em flashcards de revisão — retenção de conhecimento para equipes", "how": "Parser de texto/conversa → gerador de flashcard via LLM → sistema de repetição espaçada", "stack": "React + OpenAI + localStorage/DB", "url": ""}, {"name": "Brilliaint", "tagline": "Your notes become a 24/7 tutor that explains and quizzes you", "source": "BetaList", "cat": "Microlearning", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "Funcionários carregam SOPs e manuais — a IA vira tutor que testa e ensina o conteúdo", "how": "Upload de documento → chunking → RAG + LLM → geração de perguntas + chat de revisão", "stack": "LangChain + OpenAI + Next.js", "url": "https://betalist.com/startups/brilliaint"}, {"name": "Quizlet", "tagline": "Create and review flashcards for any subject", "source": "SaaSHub", "cat": "Microlearning", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Média", "facilidade": "Alta", "why": "Criação rápida de material de estudo e treinamento em equipe — muito usado em onboarding de produtos", "how": "CRUD de flashcard + modo de estudo + spaced repetition + compartilhamento", "stack": "qualquer framework web básico", "url": "https://www.saashub.com/software/quizlet"}, {"name": "Kiwify", "tagline": "Create & sell online courses", "source": "YCombinator", "cat": "Plataforma de Cursos", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "PMEs podem monetizar conhecimento interno criando e vendendo cursos — ou treinar clientes/parceiros", "how": "Upload de vídeo + módulos + checkout + área de membros + certificado", "stack": "Rails/Laravel + Stripe + Vimeo API", "url": "https://www.ycombinator.com/companies/kiwify"}, {"name": "Teachable", "tagline": "Build and sell online courses, coaching and downloads", "source": "SaaSHub", "cat": "Plataforma de Cursos", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "Ideal para PMEs que querem treinar clientes, parceiros ou criar receita com conhecimento", "how": "Área de membros + player de vídeo + certificado + checkout. Modelo SaaS multi-tenant simples.", "stack": "", "url": "https://www.saashub.com/software/teachable"}, {"name": "Jovian", "tagline": "Online University for Tech Professionals", "source": "YCombinator", "cat": "Plataforma de Cursos", "barrier": "⭐⭐ Baixa", "util": "Média", "necessidade": "Média", "facilidade": "Média", "why": "Upskilling de equipes técnicas em PMEs de tecnologia — cursos práticos com projetos", "how": "Plataforma de cursos + projetos práticos + comunidade + certificação", "stack": "Django + PostgreSQL", "url": "https://www.ycombinator.com/companies/jovian"}, {"name": "Risely AI", "tagline": "AI agents that automate administrative work across campuses", "source": "YCombinator", "cat": "Gestão & Coaching", "barrier": "⭐⭐ Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Média", "why": "Automatiza tarefas administrativas de RH e coaching de líderes em PMEs", "how": "Agente LLM + formulários de avaliação + relatórios automáticos + plano de ação", "stack": "LangChain + Next.js", "url": "https://www.ycombinator.com/companies/risely-ai"}, {"name": "aipreper", "tagline": "GenAI Focused Learning & Assessment Platform", "source": "ProductHunt", "cat": "Assessment IA", "barrier": "⭐ Muito Baixa", "util": "Alta", "necessidade": "Alta", "facilidade": "Alta", "why": "Avalia e treina equipes com IA generativa — adaptável para qualquer tema de negócio", "how": "LLM para gerar questões + track de respostas + feedback personalizado + dashboard", "stack": "OpenAI + React", "url": ""}, {"name": "Archie Note", "tagline": "Note-taking app with AI quizzes and pay-as-you-go credits, no subscription", "source": "BetaList", "cat": "Quiz & Avaliação", "barrier": "⭐ Muito Baixa", "util": "Média", "necessidade": "Alta", "facilidade": "Alta", "why": "Equipes transformam anotações de reuniões em material de revisão automática — retenção de decisões e processos", "how": "Editor de texto + gerador de quiz via LLM + sistema de créditos por uso", "stack": "React + OpenAI + Stripe", "url": "https://betalist.com/startups/archie-note"}, {"name": "Diven", "tagline": "Pick a topic and get instant facts and share-ready insights without prompts", "source": "BetaList", "cat": "Gestão & Coaching", "barrier": "⭐ Muito Baixa", "util": "Média", "necessidade": "Média", "facilidade": "Alta", "why": "Gera insights e fatos sobre qualquer tema para preparar apresentações e decisões rápidas", "how": "Input de tópico → pesquisa via LLM/web → cards de insights formatados + compartilhamento", "stack": "Next.js + OpenAI", "url": "https://betalist.com/startups/diven"}, {"name": "Kurios", "tagline": "Cohort-based online courses for professionals", "source": "YCombinator", "cat": "Plataforma de Cursos", "barrier": "⭐⭐ Baixa", "util": "Média", "necessidade": "Média", "facilidade": "Média", "why": "Capacitação em grupo (cohort) para times de PMEs — aprendizado com prazo e comunidade", "how": "Turmas com data de início + módulos semanais + fórum de discussão + live sessions", "stack": "Next.js + Zoom API + Supabase", "url": "https://www.ycombinator.com/companies/kurios"}, {"name": "Careerist", "tagline": "Learning platform for job seekers with job applications automation", "source": "YCombinator", "cat": "Desenvolvimento de Equipe", "barrier": "⭐⭐ Baixa", "util": "Média", "necessidade": "Alta", "facilidade": "Média", "why": "Treina e requalifica funcionários de PMEs com automação de candidaturas — RH inteligente", "how": "Cursos + automação de candidatura (scraping de vagas + auto-fill) + tracking", "stack": "Python + Selenium + Rails", "url": "https://www.ycombinator.com/companies/careerist"}];
+
+function scoreBar(val, color) {
+  const w = {Alta:100,Média:60,Baixa:25}[val]||0;
+  return `<div class="score-wrap">
+    <div class="score-bar-bg"><div class="score-bar" style="width:${w}%;background:${color}"></div></div>
+  </div>`;
+}
+
+function badgeHTML(val, col) {
+  const colColors = {
+    util:  {Alta:'#15803D',Média:'#CA8A04',Baixa:'#DC2626'},
+    need:  {Alta:'#6D28D9',Média:'#9333EA',Baixa:'#C084FC'},
+    easy:  {Alta:'#0369A1',Média:'#0EA5E9',Baixa:'#7DD3FC'},
+  };
+  const labels = {Alta:'🔥 Alta',Média:'⚡ Média',Baixa:'💤 Baixa'};
+  const c = colColors[col][val]||'#6B7280';
+  return `<span class="badge" style="background:${c}">${labels[val]||val}</span>${scoreBar(val,c)}`;
+}
+
+function barrierBadge(b) {
+  const c = b.includes('Muito') ? '#16A34A' : '#2563EB';
+  return `<span class="badge" style="background:${c}">${b}</span>`;
+}
+
+function stackPills(s) {
+  if(!s) return '';
+  return '<div class="stack-pills">' + s.split('+').map(p=>`<span>${p.trim()}</span>`).join('') + '</div>';
+}
+
+function render(data) {
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+  data.forEach((t,i) => {
+    const row = document.createElement('tr');
+    row.dataset.util = t.util;
+    row.dataset.need = t.necessidade;
+    row.dataset.easy = t.facilidade;
+    row.dataset.cat = t.cat;
+    row.dataset.src = t.source;
+    row.dataset.barrier = t.barrier;
+    row.dataset.name = t.name.toLowerCase();
+    row.dataset.tags = (t.tagline+' '+t.why).toLowerCase();
+    row.innerHTML = `
+      <td>
+        <div class="tool-name">${t.name}</div>
+        <div class="tool-tagline">"${t.tagline}"</div>
+      </td>
+      <td><span class="cat-tag">${t.cat}</span></td>
+      <td>${barrierBadge(t.barrier.replace('⭐ ','').replace('⭐⭐ ',''))}</td>
+      <td>${badgeHTML(t.util,'util')}</td>
+      <td>${badgeHTML(t.necessidade,'need')}</td>
+      <td>${badgeHTML(t.facilidade,'easy')}</td>
+      <td><span class="source-tag">${t.source}</span></td>
+      <td><button class="detail-btn" onclick="toggleDrawer(${i})">▼ Ver</button></td>
+    `;
+    tbody.appendChild(row);
+
+    const drawer = document.createElement('tr');
+    drawer.className = 'drawer';
+    drawer.id = 'drawer-' + i;
+    drawer.dataset.parentIdx = i;
+    drawer.innerHTML = `<td colspan="8">
+      <div class="drawer-inner">
+        <div>
+          <div class="d-label">💡 Por que PMEs precisam</div>
+          <div class="d-text">${t.why}</div>
+        </div>
+        <div>
+          <div class="d-label">🔧 Como copiar</div>
+          <div class="d-text">${t.how}</div>
+          ${stackPills(t.stack)}
+          ${t.url ? `<br><a class="ext-link" href="${t.url}" target="_blank">🔗 Ver ferramenta</a>` : ''}
+        </div>
+      </div>
+    </td>`;
+    tbody.appendChild(drawer);
+  });
+  applyFilters();
+}
+
+function toggleDrawer(i) {
+  const d = document.getElementById('drawer-'+i);
+  const isOpen = d.style.display === 'table-row';
+  d.style.display = isOpen ? 'none' : 'table-row';
+  const btn = d.previousElementSibling.querySelector('.detail-btn');
+  if(btn) btn.textContent = isOpen ? '▼ Ver' : '▲ Fechar';
+}
+
+function applyFilters() {
+  const search = document.getElementById('f-search').value.toLowerCase();
+  const cat    = document.getElementById('f-cat').value;
+  const src    = document.getElementById('f-src').value;
+  const util   = document.getElementById('f-util').value;
+  const need   = document.getElementById('f-need').value;
+  const easy   = document.getElementById('f-easy').value;
+  const barrier= document.getElementById('f-barrier').value;
+
+  const rows = document.querySelectorAll('#table-body tr:not(.drawer)');
+  let visible = 0;
+  rows.forEach(row => {
+    const matchSearch = !search || row.dataset.name.includes(search) || row.dataset.tags.includes(search);
+    const matchCat    = !cat    || row.dataset.cat === cat;
+    const matchSrc    = !src    || row.dataset.src === src;
+    const matchUtil   = !util   || row.dataset.util === util;
+    const matchNeed   = !need   || row.dataset.need === need;
+    const matchEasy   = !easy   || row.dataset.easy === easy;
+    const matchBarrier= !barrier|| row.dataset.barrier.includes(barrier);
+    const show = matchSearch && matchCat && matchSrc && matchUtil && matchNeed && matchEasy && matchBarrier;
+    row.classList.toggle('hidden', !show);
+    // also hide corresponding drawer
+    const nextRow = row.nextElementSibling;
+    if(nextRow && nextRow.classList.contains('drawer')) {
+      nextRow.classList.toggle('hidden', !show);
+      if(!show) nextRow.style.display = 'none';
+    }
+    if(show) visible++;
+  });
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+}
+
+function resetFilters() {
+  ['f-search','f-cat','f-src','f-util','f-need','f-easy','f-barrier'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el.tagName === 'INPUT') el.value = '';
+    else el.value = '';
+  });
+  applyFilters();
+}
+
+['f-search','f-cat','f-src','f-util','f-need','f-easy','f-barrier'].forEach(id => {
+  document.getElementById(id).addEventListener('input', applyFilters);
+  document.getElementById(id).addEventListener('change', applyFilters);
+});
+
+render(DATA);
+</script>
+</body>
+</html>
